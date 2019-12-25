@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dzW-1c-gCa">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Measure View Controller-->
+        <scene sceneID="4V9-kX-VYn">
+            <objects>
+                <viewController id="dzW-1c-gCa" customClass="MeasureViewController" customModule="ARKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JWd-lw-cZ8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ogr-4d-7b5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdo-E5-xBF">
+                                <rect key="frame" x="24" y="46" width="24" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="IT5-4G-QHp"/>
+                                    <constraint firstAttribute="width" constant="24" id="zms-FV-lV7"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="onTapCloseButton:" destination="dzW-1c-gCa" eventType="touchUpInside" id="OFw-1j-QO5"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scope" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7tj-hO-I4H">
+                                <rect key="frame" x="183" y="422.5" width="48" height="50.5"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="0.45071703767123289" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="3Z1-Xf-yQ6"/>
+                                    <constraint firstAttribute="width" constant="48" id="mqj-yz-6ZL"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="FZ5-3Z-bvL">
+                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehS-Ts-LFs" userLabel="Layout Buttons">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKT-Gy-V8o" customClass="RoundedButton" customModule="ARKitSample" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="8" width="366" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="Utt-Sc-73Z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="14"/>
+                                                <state key="normal" title="始点を決定">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onTapMeasureButton:" destination="dzW-1c-gCa" eventType="touchUpInside" id="ljg-CB-oNS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="lKT-Gy-V8o" firstAttribute="leading" secondItem="ehS-Ts-LFs" secondAttribute="leading" constant="24" id="4iA-MZ-tcV"/>
+                                            <constraint firstAttribute="height" constant="80" id="Am1-oL-xFn"/>
+                                            <constraint firstItem="lKT-Gy-V8o" firstAttribute="top" secondItem="ehS-Ts-LFs" secondAttribute="top" constant="8" id="MU0-0a-ubB"/>
+                                            <constraint firstAttribute="trailing" secondItem="lKT-Gy-V8o" secondAttribute="trailing" constant="24" id="xPq-bs-Jnb"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MQt-Do-d40">
+                                <rect key="frame" x="40" y="84" width="334" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在の測定値" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8y6-h5-Lmn">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="14"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azS-Iq-Oa2">
+                                        <rect key="frame" x="0.0" y="22" width="334" height="24"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MQt-Do-d40" firstAttribute="top" secondItem="fdS-bd-TaZ" secondAttribute="top" constant="40" id="8Gn-UN-6eu"/>
+                            <constraint firstAttribute="bottom" secondItem="Ogr-4d-7b5" secondAttribute="bottom" id="CNg-yc-3Ly"/>
+                            <constraint firstItem="Bdo-E5-xBF" firstAttribute="top" secondItem="fdS-bd-TaZ" secondAttribute="top" id="IeV-Ff-HiC"/>
+                            <constraint firstItem="7tj-hO-I4H" firstAttribute="centerX" secondItem="JWd-lw-cZ8" secondAttribute="centerX" id="UU0-7j-2xc"/>
+                            <constraint firstItem="Ogr-4d-7b5" firstAttribute="top" secondItem="JWd-lw-cZ8" secondAttribute="top" id="WuL-iI-GNM"/>
+                            <constraint firstItem="FZ5-3Z-bvL" firstAttribute="trailing" secondItem="fdS-bd-TaZ" secondAttribute="trailing" id="aGO-Wu-hma"/>
+                            <constraint firstItem="MQt-Do-d40" firstAttribute="leading" secondItem="fdS-bd-TaZ" secondAttribute="leading" constant="40" id="dVH-4E-JGj"/>
+                            <constraint firstItem="fdS-bd-TaZ" firstAttribute="trailing" secondItem="MQt-Do-d40" secondAttribute="trailing" constant="40" id="enS-Uh-YSg"/>
+                            <constraint firstAttribute="bottom" secondItem="FZ5-3Z-bvL" secondAttribute="bottom" id="jgB-8p-cdW"/>
+                            <constraint firstItem="Ogr-4d-7b5" firstAttribute="leading" secondItem="fdS-bd-TaZ" secondAttribute="leading" id="lKD-5s-G6n"/>
+                            <constraint firstItem="7tj-hO-I4H" firstAttribute="centerY" secondItem="JWd-lw-cZ8" secondAttribute="centerY" id="lKP-du-Sz8"/>
+                            <constraint firstItem="FZ5-3Z-bvL" firstAttribute="leading" secondItem="fdS-bd-TaZ" secondAttribute="leading" id="nd7-dv-hV0"/>
+                            <constraint firstItem="Bdo-E5-xBF" firstAttribute="leading" secondItem="fdS-bd-TaZ" secondAttribute="leading" constant="24" id="wpV-eI-azW"/>
+                            <constraint firstItem="Ogr-4d-7b5" firstAttribute="trailing" secondItem="fdS-bd-TaZ" secondAttribute="trailing" id="xca-ff-Qgd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fdS-bd-TaZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="Bdo-E5-xBF" id="nHG-H0-9et"/>
+                        <outlet property="measureButton" destination="lKT-Gy-V8o" id="TRG-e5-sG5"/>
+                        <outlet property="measureLabel" destination="azS-Iq-Oa2" id="mvP-nE-9K3"/>
+                        <outlet property="sceneView" destination="Ogr-4d-7b5" id="iNh-lo-8nY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3zf-rQ-Zp2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298.55072463768118" y="-117.1875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="scope" catalog="system" width="64" height="60"/>
+        <image name="xmark" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
